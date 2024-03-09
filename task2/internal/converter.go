@@ -1,11 +1,13 @@
-package internal
+package converter
 
 import (
  "encoding/json"
  "gopkg.in/yaml.v3"
  "io/ioutil"
+ "os"
+ "path/filepath"
 
- "models"
+ "models/employee"
 )
 
 func ConvertJsonToYaml(filename string) ([]byte, error) {
@@ -20,18 +22,18 @@ func ConvertJsonToYaml(filename string) ([]byte, error) {
   return nil, err
  }
 
- var employee models.Employee
+ var employee1 employee.Employee
  err = json.Unmarshal(data, &employee)
  if err != nil {
   return nil, err
  }
 
- err = employee.Validate()
+ err = employee1.Validate()
  if err != nil {
   return nil, err
  }
 
- yamlData, err := yaml.Marshal(&employee)
+ yamlData, err := yaml.Marshal(&employee1)
  if err != nil {
   return nil, err
  }

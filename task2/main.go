@@ -4,9 +4,7 @@ import (
  "flag"
  "fmt"
  "io/ioutil"
- "os"
- "path/filepath"
- "internal"
+ "internal/converter"
 )
 
 func main() {
@@ -18,7 +16,7 @@ func main() {
   return
  }
 
- yamlData, err := internal.ConvertJsonToYaml(*filenamePtr)
+ yamlData, err := converter.ConvertJsonToYaml(*filenamePtr)
  if err != nil {
   fmt.Println("Error converting JSON to YAML:", err)
   return
