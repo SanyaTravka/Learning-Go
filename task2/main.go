@@ -6,8 +6,7 @@ import (
  "io/ioutil"
  "os"
  "path/filepath"
-
- "github.com/SanyaTravka/Learning-Go/task2/internal"
+ "internal"
 )
 
 func main() {

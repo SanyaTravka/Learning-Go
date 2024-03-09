@@ -4,10 +4,8 @@ import (
  "encoding/json"
  "gopkg.in/yaml.v3"
  "io/ioutil"
- "os"
- "path/filepath"
 
- "github.com/SanyaTravka/Learning-Go/task2/models"
+ "models"
 )
 
 func ConvertJsonToYaml(filename string) ([]byte, error) {
